@@ -1,0 +1,12 @@
+h2 Listing posts
+
+- @posts.each do |post|
+    h1 = post.title
+    p = post.content
+    td = link_to 'Show', post, class: " label label-info"
+    td = link_to 'Edit', edit_post_path(post), class: "label label-warning"
+    td = link_to 'Destroy', post, class: " label label-danger", data: {:confirm => 'Are you sure?'}, :method => :delete
+    div
+      b Author:
+      = post.user.email
+= link_to 'New Post', new_post_path, class: " label label-success"
